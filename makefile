@@ -2,7 +2,7 @@ both:
 	make build run
 
 run:
-	LD_LIBRARY_PATH=$(shell pwd)/libs ./main.o test.bf
+	builds/main.o --char --file ./hello_world.bf
 
 build:
-	gcc -o main.o main.c -g3 -Wall
+	gcc -o builds/main.o main.c -O0 -g3 -Wall
