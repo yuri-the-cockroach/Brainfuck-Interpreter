@@ -7,11 +7,17 @@ struct numbelt{
     int value;
     struct numbelt * next;
     struct numbelt * prev;
+    int pos;
 } typedef numbelt; 
 
 // numbelt functions
 numbelt * initNum() {
-    return calloc(1, sizeof(numbelt));
+    numbelt *new_belt = (numbelt*)malloc(sizeof(numbelt));
+    new_belt->value = 0;
+    new_belt->next = 0;
+    new_belt->prev = 0;
+    new_belt->pos = 0;
+    return new_belt;
 }
 
 // Gets the next number in the belt
@@ -19,9 +25,10 @@ numbelt * initNum() {
 // The next number is guaranteed to be returned
 // The only purpose of this function it to make sure, that the next number exists
 numbelt * getRight(numbelt * cur_number) {
-    if ( !cur_number->next ) {
-        numbelt * new_number = initNum();
-        new_number->value = 0;
+    if ( cur_number->next == 0 ) {
+        numbelt *new_number = initNum();
+        new_number->pos = cur_number->pos + 1;
+        new_number->prev = cur_number;
         cur_number->next = new_number;
     }
     return cur_number->next;
@@ -30,9 +37,10 @@ numbelt * getRight(numbelt * cur_number) {
 // Same as above, but for prev number
 // Mostly to be sure
 numbelt * getLeft(numbelt * cur_number) {
-    if ( !cur_number->prev ) {
-        numbelt * new_number = initNum();
-        new_number->value = 0;
+    if ( cur_number->prev == 0 ) {
+        numbelt *new_number = initNum();
+        new_number->pos = cur_number->pos - 1;
+        new_number->next = cur_number;
         cur_number->prev = new_number;
     }
     return cur_number->prev;

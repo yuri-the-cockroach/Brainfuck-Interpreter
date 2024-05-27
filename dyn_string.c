@@ -106,6 +106,7 @@ int stringAppend(string * the_string, char what) {
 int deInit(string * the_string) {
     free(the_string->char_ptr);
     free(the_string);
+    return 0;
 }
 
 #endif
