@@ -1,4 +1,0 @@
-clang
-%c -std=c11
-%h --include=headers/*
--Ilibs
