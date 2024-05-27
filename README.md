@@ -34,4 +34,4 @@ meaning:
 
 Any character that is not on this table will be ignored.
 
-For licensing this project pleace see the [LICENSE](./LICENSE.md)
+For licensing questions pleace see the [LICENSE](./LICENSE.md)
