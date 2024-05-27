@@ -6,4 +6,4 @@ tmp/
 .ccls-cache/
 .ccls-cache/*
 .gdb_history
-builds/*
+builds/bf_run
