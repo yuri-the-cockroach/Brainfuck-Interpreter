@@ -2,7 +2,8 @@
 .idea
 *.log
 tmp/
+.ccls
 .ccls-cache/
 .ccls-cache/*
 .gdb_history
-build/*
+builds/*
